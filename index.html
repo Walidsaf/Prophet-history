@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Prophets in Islam</title>
+    <!-- External CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4b6cb7, #182848);
+            padding: 10px 0;
+        }
+
+        .hero-bg {
+            background: url('https://source.unsplash.com/random/1920x1080/?mosque,sky') no-repeat center center / cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3,
+        .overlay p {
+            color: white;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #ddd;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item .date {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .parallax-bg {
+            background: url('https://source.unsplash.com/random/1920x1080/?quran,scroll') no-repeat center center;
+            background-size: cover;
+            height: 500px;
+            position: relative;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .parallax-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .animated-text {
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: #fff;
+            background: #000;
+            display: inline-block;
+            padding: 0.5em 1em;
+            animation: flickerAnimation 1.5s infinite alternate;
+        }
+
+        @keyframes flickerAnimation {
+            0% {
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 1;
+                text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 15px #ff0;
+            }
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="fixed w-full top-0 z-50 shadow-md">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">Prophets in Islam</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="hover:text-yellow-300 text-white">Home</a></li>
+                    <li><a href="#prophets" class="hover:text-yellow-300 text-white">Prophets</a></li>
+                    <li><a href="#timeline" class="hover:text-yellow-300 text-white">Timeline</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-300 text-white">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg flex flex-col items-center justify-center mt-16 p-6 relative">
+        <div class="hero-content" data-aos="fade-up">
+            <h2 class="text-5xl font-extrabold mb-4">Discover the Prophets' Stories</h2>
+            <p class="text-lg mb-6">Journey through the lives of Prophets with a visually stunning experience.</p>
+            <a href="#prophets"
+                class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded transition-transform transform hover:scale-105">Explore
+                Now</a>
+        </div>
+    </section>
+
+    <!-- Prophets Section with Swiper Slider -->
+    <section id="prophets" class="section-padding container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Prophets</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Prophet Adam -->
+            <div class="card relative" data-aos="fade-up">
+                <img src="https://source.unsplash.com/random/800x800/?nature,beginning" alt="Prophet Adam" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x800?text=Image+Not+Available';">
+                <div class="overlay">
+                    <h3 class="text-2xl font-semibold">Prophet Adam</h3>
+                    <p>Considered the first Prophet, the father of mankind.</p>
+                </div>
+            </div>
+            <!-- Prophet Ibrahim -->
+            <div class="card relative" data-aos="fade-up">
+                <img src="https://source.unsplash.com/random/800x800/?desert,faith" alt="Prophet Ibrahim" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x800?text=Image+Not+Available';">
+                <div class="overlay">
+                    <h3 class="text-2xl font-semibold">Prophet Ibrahim</h3>
+                    <p>Renowned for his faith and submission to Allah's will.</p>
+                </div>
+            </div>
+            <!-- Prophet Musa -->
+            <div class="card relative" data-aos="fade-up">
+                <img src="https://source.unsplash.com/random/800x800/?mountain,exodus" alt="Prophet Musa" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x800?text=Image+Not+Available';">
+                <div class="overlay">
+                    <h3 class="text-2xl font-semibold">Prophet Musa</h3>
+                    <p>Led the Israelites out of Egypt and received the Torah.</p>
+                </div>
+            </div>
+            <!-- Prophet Isa -->
+            <div class="card relative" data-aos="fade-up">
+                <img src="https://source.unsplash.com/random/800x800/?jesus,miracles" alt="Prophet Isa" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x800?text=Image+Not+Available';">
+                <div class="overlay">
+                    <h3 class="text-2xl font-semibold">Prophet Isa</h3>
+                    <p>Performed many miracles and was a messenger of peace.</p>
+                </div>
+            </div>
+            <!-- Prophet Muhammad -->
+            <div class="card relative" data-aos="fade-up">
+                <img src="https://source.unsplash.com/random/800x800/?kaaba,makkah" alt="Prophet Muhammad" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x800?text=Image+Not+Available';">
+                <div class="overlay">
+                    <h3 class="text-2xl font-semibold">Prophet Muhammad</h3>
+                    <p>The last Prophet, the final messenger, and the seal of Prophets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 px-4 bg-gray-200">
+        <h2 class="text-4xl font-bold text-center mb-12">Timeline of Prophets</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="date">2000 BC</div>
+                <h3>Prophet Ibrahim</h3>
+                <p>Known for his unwavering faith and devotion to Allah.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="date">1800 BC</div>
+                <h3>Prophet Musa</h3>
+                <p>Led the Israelites to freedom and received the divine commandments.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="date">1000 BC</div>
+                <h3>Prophet Dawud</h3>
+                <p>Known for his Psalms and leadership in Israel.</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="date">600 AD</div>
+                <h3>Prophet Muhammad</h3>
+                <p>The final Prophet, who brought the final revelation, the Qur'an.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Background Section -->
+    <section class="parallax-bg flex items-center justify-center text-center text-white py-20">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-4 animated-text">Experience the History</h2>
+            <p class="text-lg">Dive deep into the stories and teachings of the Prophets.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 History of Prophets. All rights reserved.</p>
+            <a href="https://github.com/yourusername" class="text-yellow-400 hover:underline">GitHub</a>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Initialize AOS
+        AOS.init();
+
+        // GSAP Animations
+        gsap.from(".hero-content", {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".card", {
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".timeline-item", {
+            x: -100,
+            opacity: 0,
+            stagger: 0.3,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".animated-text", {
+            scale: 0.5,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power3.out",
+            delay: 0.5
+        });
+    </script>
+</body>
+
+</html>
